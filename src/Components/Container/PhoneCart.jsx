@@ -1,7 +1,8 @@
 import React from "react";
+import { MdDelete } from "react-icons/md";
 import { Link } from "react-router";
 
-const PhoneCart = ({ data }) => {
+const PhoneCart = ({ data, deletable,handleDelete }) => {
   const { name, description, image,id } = data;
 
   return (
@@ -25,6 +26,7 @@ const PhoneCart = ({ data }) => {
         </div>
 
       </div>
+      {deletable && <button onClick={() => handleDelete(id)} className="absolute -top-4 -right-2 btn rounded-full px-3 py-5"> <MdDelete size={20}/> </button>}
     </div>
   );
 };
