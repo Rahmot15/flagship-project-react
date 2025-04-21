@@ -33,9 +33,10 @@ export const router = createBrowserRouter([
         Component: Favorites,
       },
       {
-        path: "/details",
+        path: "/details/:detailsId",
         Component: PhoneDetails,
-        
+        hydrateFallbackElement: <span className="loading loading-dots loading-xl  ml-[50%] mt-5"></span>,
+        loader: () => fetch('../phones.json'),
       },
     ],
   },
